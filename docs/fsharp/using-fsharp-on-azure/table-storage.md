@@ -28,7 +28,7 @@ Azure Cosmos DB provides the Table API for applications that are written for Azu
 
 Applications written for Azure Table storage can migrate to Azure Cosmos DB by using the Table API with no code changes and take advantage of premium capabilities. The Table API has client SDKs available for .NET, Java, Python, and Node.js.
 
-For more information, see [Introduction to Azure Cosmos DB Table API](https://docs.microsoft.com/en-us/azure/cosmos-db/table-introduction).
+For more information, see [Introduction to Azure Cosmos DB Table API](https://docs.microsoft.com/azure/cosmos-db/table-introduction).
 
 ### About this tutorial
 
@@ -199,7 +199,7 @@ You can delete a table from a storage account. A table that has been deleted wil
 Now that you've learned the basics of Table storage, follow these links
 to learn about more complex storage tasks and the Azure Cosmos DB Table API.
 
-- [Introduction to Azure Cosmos DB Table API](https://docs.microsoft.com/en-us/azure/cosmos-db/table-introduction)
+- [Introduction to Azure Cosmos DB Table API](https://docs.microsoft.com/azure/cosmos-db/table-introduction)
 - [Storage Client Library for .NET reference](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
 - [Azure Storage Type Provider](http://fsprojects.github.io/AzureStorageTypeProvider/)
 - [Azure Storage Team Blog](http://blogs.msdn.com/b/windowsazurestorage/)
