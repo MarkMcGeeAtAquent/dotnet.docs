@@ -38,7 +38,7 @@ For a conceptual overview of table storage, please see [the .NET guide for table
 
 ## Prerequisites
 
-To use this guide, you must first [create an Azure storage account](https://docs.microsoft.com/azure/storage/storage-create-storage-account) or Azure Cosmos DB account.
+To use this guide, you must first [create an Azure storage account](https://docs.microsoft.com/azure/storage/storage-create-storage-account) or Azure Cosmos DB account [Azure Cosmos DB account](https://azure.microsoft.com/en-us/try/cosmosdb/).
 
 
 ## Create an F# Script and Start F# Interactive
